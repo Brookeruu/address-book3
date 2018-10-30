@@ -16,7 +16,7 @@ AddressBook.prototype.assignId = function() {
 
 AddressBook.prototype.findContact = function(id) {
   for (var i=0; i< this.contacts.length; i++) {
-    if (this.contacts.i) {
+    if (this.contacts[i]) {
       if (this.contacts[i].id == id) {
         return this.contacts[i];
       }
@@ -115,6 +115,11 @@ $(document).ready(function() {
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
     var inputtedPhoneNumber = $("input#new-phone-number").val();
+
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-phone-number").val("");
+
     var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
     addressBook.addContact(newContact);
     //console.log(addressBook.contacts);
